@@ -149,10 +149,10 @@ do
   --  See `:help 'list'`
   --  and `:help 'listchars'`
   --
-  --  Notice listchars is set using `vim.opt` instead of `vim.o`.
-  --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
-  --   See `:help lua-options`
-  --   and `:help lua-guide-options`
+  -- Notice listchars is set using `vim.opt` instead of `vim.o`.
+  -- It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+  --  See `:help lua-options`
+  --  and `:help lua-guide-options`
   vim.o.list = true
   vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
@@ -169,6 +169,8 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  vim.opt.completeopt = { 'noinsert', 'menuone' }
 end
 
 -- ============================================================
@@ -237,6 +239,9 @@ do
   -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
   -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+  vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center on Page Up' })
+  vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center on Page Down' })
 
   -- [[ Basic Autocommands ]]
   --  See `:help lua-guide-autocommands`
